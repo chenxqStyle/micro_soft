@@ -1,0 +1,36 @@
+<view>
+  <view  class='mycase-body'>
+    <view class='mycase-body-up'>
+      <image src="{{imageUrl+'images/mycase.png'}}"></image>
+    </view>
+    <view  class='mycase-body-bottom'>
+     <form bindsubmit='toCloudMain_fun' bindreset=''>
+      <view>
+        <image 
+          src='{{imgs[0].imgsrc}}' 
+          mode='{{imgs[0].imgmode}}'>
+        </image>
+        <input type='text' name='name' 
+          placeholder='请输入您的姓名' 
+          placeholder-style='color:#bfbfbf;font-size:30rpx;'
+          value="{{userInfo.name}}"
+          >
+        </input>
+      </view>
+      <view>
+        <image 
+          src='{{imgs[1].imgsrc}}' 
+          mode='{{imgs[1].imgmode}}'>
+        </image>
+        <input type='idcard'   name = 'sfz'
+          placeholder='请输入您的身份证号'
+          placeholder-style='color:#bfbfbf;font-size:30rpx;' value='{{userInfo.id}}'>
+        </input>
+      </view>
+      <view>
+        <button class='btn-big {{noClick == 1?"btn-disable":""}}' form-type='submit'>实名验证</button>
+      </view>
+      </form>
+    </view>
+  </view>
+</view>

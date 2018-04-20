@@ -1,0 +1,80 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+} 
+
+/* cxq 定义公共样式  */
+.color-blue{ 
+  /*蓝色字体  */
+  color:#2088d6;
+}
+.color-white{
+  color:#fff;
+}
+.ft-grey{
+  color:#888;
+}
+
+  /*大按钮样式  */
+.btn-big{
+  background: #2088d6;
+  width:508rpx;
+  height:88rpx;
+  color:#fefefe;
+  border-radius:8rpx;
+  font-size: 34rpx;
+}
+
+  /*小按钮样式  */
+.btn-small{
+   background: #2088d6;
+   width:288rpx;
+   height:58rpx;
+   border-radius:8rpx;
+   color:#fefefe;
+   line-height: 58rpx;
+   font-size: 26rpx;
+}
+.btn-disable{
+  background: #888;
+  pointer-events: none;
+  cursor: default;
+}
+
+/*字体大小级别  */
+  /*一般内容字体 26  */
+.fts-26{
+  font-size: 26rpx;
+}
+  /*列表头  */
+.fts-28{
+  font-size: 28rpx;
+}
+  /*大按钮  */
+.fts-34{
+  font-size: 34rpx;
+}
+  /* tab主标题 */
+.fts-36{
+  font-size:36rpx; 
+}
+
+.blank-2{
+   width:52rpx;
+   display: inline-block;
+}
+
+.blank-3{
+   width:13rpx;
+   display: inline-block;
+}
+.blank-0{
+  width:10rpx;
+  display: inline-block;
+}

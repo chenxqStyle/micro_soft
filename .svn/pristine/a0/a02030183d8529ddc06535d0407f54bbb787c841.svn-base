@@ -1,0 +1,39 @@
+<view>
+  <view  class='branform-body'>
+    <view class='branform-body-up'>
+      <image src="{{app.globalData.httpUrl+'images/zntd.png'}}"></image>
+    </view>
+    <form bindsubmit='formLogin_fun'>
+      <view  class='branform-body-bottom'>
+        <view>
+          <image 
+            src='{{imgs[0].imgsrc}}' 
+            mode='{{imgs[0].imgmode}}'>
+          </image>
+          <input type='text' 
+            name='formname'
+            placeholder='请输入您的姓名' 
+            placeholder-style='color:#bfbfbf;'
+            placeholder-class='placeholder-class-style'>
+          </input>
+        </view>
+        <view>
+          <image 
+            src='{{imgs[1].imgsrc}}' 
+            mode='{{imgs[1].imgmode}}'>
+          </image>
+          <input type='idcard' 
+            name='formidcard'
+            placeholder='请输入您的身份证号'
+            placeholder-style='color:#bfbfbf;'
+            placeholder-class='placeholder-class-style'>
+          </input>
+        </view>
+        <view>
+          <button form-type='submit'>实名验证</button>
+        </view>
+      </view>
+    </form>
+    
+  </view>
+</view>

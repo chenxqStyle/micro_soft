@@ -1,0 +1,60 @@
+
+.mycase-body-up{
+  background:#b5b5b5;
+  height:320rpx;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.mycase-body-up image{
+  width:750rpx;
+  height:320rpx;
+}
+
+.mycase-body-bottom view:nth-child(1){
+  /*姓名部分*/
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-top:85rpx;
+}
+.mycase-body-bottom view:nth-child(1) image,
+.mycase-body-bottom view:nth-child(2) image{
+  width:82rpx;
+  height:82rpx;
+}
+
+.mycase-body-bottom view:nth-child(1) input,
+.mycase-body-bottom view:nth-child(2) input{
+  border:1px solid #888888;
+  border-radius:10rpx;
+  height:69rpx;
+  margin-left:35rpx;
+  padding-left:30rpx;
+  width:380rpx;
+}
+
+.mycase-body-bottom view:nth-child(2){
+  /*身份证部分*/
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  margin-top:25rpx;
+}
+
+.mycase-body-bottom view:nth-child(3) button{
+  /*提交按钮部分*/
+  background: #2088d6;
+  color:#fff;
+  width:505rpx;
+  margin-top:90rpx;
+}
+
+
+
+
+
+
+
+

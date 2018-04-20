@@ -1,0 +1,73 @@
+<view>
+  <view  class='index-body'>
+    <view  class='index-body-up'>
+      <swiper 
+        indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" 
+        interval="{{interval}}" 
+        duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" mode='widthFix' class='swiper-img' />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view  class='index-body-middle'>
+      <view  class='body-middle-left'>
+          <image
+              src='{{imgs.middleImg[0].imgsrc}}' 
+              mode='{{imgs.middleImg[0].imgmode}}'>
+          </image>  
+          <view  style='display:flex;flex-direction:column;'>
+            <text>微叫号</text>
+            <text  style='color:gray;font-size:30rpx;color:#444444'>在线预约线下取号</text>  
+          </view> 
+      </view>
+      <view  class='body-middle-right' bindtap='navBrandIndex_fun'>
+        <image
+              src='{{imgs.middleImg[1].imgsrc}}' 
+              mode='{{imgs.middleImg[1].imgmode}}'>
+          </image>  
+          <view  style='display:flex;flex-direction:column;'>
+            <text>智能填单</text>
+            <text  style='color:gray;font-size:30rpx;color:#444444'>文书在线快捷生成</text>  
+          </view> 
+      </view>
+    </view>
+    <view  class='index-body-bottom'>
+       <view class='body-bottom-up'  style='height:{{overplusHeight}}rpx'>
+        <view class='bottom-up-left'>
+          <image  class='bottom-img-style' 
+                src='{{imgs.bottomImg[0].imgsrc}}' 
+                mode='{{imgs.bottomImg[0].imgmode}}'>
+          </image>
+          <text>业务预约</text>  
+        </view>
+        <view class='bottom-up-right'>
+          <image class='bottom-img-style'
+              src='{{imgs.bottomImg[1].imgsrc}}'
+              mode='{{imgs.bottomImg[1].imgmode}}'>
+            </image>
+            <text>在线立案</text>
+        </view>
+      </view>
+      <view class='body-bottom-down' style='height:{{overplusHeight}}rpx'>
+        <view class='bottom-down-left' bindtap='toCloudLogo_fun'>
+          <image class='bottom-img-style' 
+              src='{{imgs.bottomImg[2].imgsrc}}' 
+              mode='{{imgs.bottomImg[2].imgmode}}'>
+            </image>
+            <text>预约云柜</text>
+        </view>
+        <view class='bottom-down-right' bindtap='toMycase_fun'>
+          <image class='bottom-img-style' 
+              src='{{imgs.bottomImg[3].imgsrc}}'
+              mode='{{imgs.bottomImg[3].imgmode}}'>
+            </image>
+            <text>我的案件</text>
+        </view>
+      </view> 
+    </view>
+  </view>
+</view>

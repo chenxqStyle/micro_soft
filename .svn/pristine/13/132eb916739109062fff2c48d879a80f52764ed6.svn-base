@@ -1,0 +1,23 @@
+<view class='mycaselist-main'>
+  <scroll-view scroll-y style="height: 100vh;">
+    <view class='mycaselist-per' bindtap='showCaseDetail_fun'  wx:for="{{myCaseList}}" wx:key="{{index}}" data-id='{{item.id}}'>
+    <view>
+      <text>立案日期</text>
+      <text>{{item.lasj}}</text>
+    </view>
+    <view>
+      <text>案号</text>
+      <text  style='color:#2088d6;'>{{item.ah}}</text>
+    </view>
+    <view>
+      <text>当事人</text>
+      <text>{{'原告：'+item.yg+'，被告：'+item.bg+'，原告代理人：'+item.ygdlr+'，被告代理人：'+item.bgdlr}}</text>
+    </view>
+    <view>
+      <text>案由</text>
+      <text>{{item.ay}}</text>
+    </view>
+  </view>
+  </scroll-view>
+</view>
+  

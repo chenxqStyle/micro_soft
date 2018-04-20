@@ -1,0 +1,178 @@
+.brainform-swiper-tab{
+  width: 100%; 
+  line-height: 100rpx;
+  font-size: 36rpx;
+  font-family: 微软雅黑;
+}
+
+.brainform-swiper-list{
+  font-size: 40rpx; 
+  text-align: center; 
+  display: inline-block; 
+  width: 50%; 
+  color: #777777; 
+}
+
+.on{
+  color: #2088d6; 
+  border-bottom: 5rpx solid #2088d6;
+}
+
+.swiper-box{ 
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #eeeeee;
+}
+
+/*智能填单部分*/
+.form-list-main{
+  display:flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+}
+
+.form-list-main view{
+  background: #fff;
+  width:320rpx;
+  height:127rpx;
+  border:1px solid #bfbfbf;
+  border-radius:15rpx;
+  margin-top:20rpx;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: #444444;
+  font-size:30rpx;
+}
+
+/*智能填单的详情页*/
+.form-details-top{
+  color:gray;
+  font-size:30rpx;
+  font-weight:300;
+  padding-left:30rpx;
+  margin-top:20rpx;
+}
+.form-details-middle{
+  background: #fff;
+  margin-top:10rpx;
+  padding:0 30rpx 0 30rpx;
+  font-size:27rpx;
+}
+
+ .form-details-middle view:not(:last-child){
+  display:flex;
+  align-items: center;
+  border-bottom:1px solid #e5e5e5;
+  height:65rpx;
+  position: relative;
+} 
+
+
+.detail-middle-text1 input{
+  width: 70%;
+}
+
+.detail-middle-text2 input{
+    width: 65%;
+    text-align: left;
+}
+
+.detail-middle-text2 text:first-child{
+    width:30%;
+}
+
+
+.detail-middle-text3{
+  padding:5rpx 0 30rpx 0; 
+  position: relative;
+}
+
+.detail-middle-text3 text{
+  line-height:50rpx;  
+}
+
+.detail-middle-text3 textarea{
+  border:1px solid #efefef;
+  width:666rpx;
+  height:230rpx;
+  border-radius:8rpx;
+  margin-top:5rp
+}
+
+.form-details-bottom  button{
+  margin-top:20rpx;
+  width:690rpx;
+  background: #2088d6;
+  color:#fff;
+}
+
+/*填单记录*/
+.form-list-recode{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.form-list-pre{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  width:690rpx;
+  height:145rpx;
+  margin-top:30rpx;
+  border-radius:8rpx;
+  background: #fff;
+  padding:0 40rpx 0 40rpx;
+  box-sizing: border-box;
+  font-size:35rpx;
+}
+
+.list-pre-left view:last-child{
+  color:gray;
+}
+
+/*填单记录的详情页*/
+
+.list-recode-detail{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recode-detail-body{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  width:680rpx;
+  margin-top:50rpx;
+  background: #fff;
+  border:1px solid #bfbfbf;
+  border-radius:20rpx;
+}
+
+.detail-body-top{
+  display:flex;
+  justify-content: center;
+  color:#000;
+  font-size:30rpx;
+  padding:30rpx 20rpx;
+  margin-top:30rpx;
+  border-bottom:1px solid #e5e5e5;
+  width:100%;
+}
+.recode-detail-body image{
+  width:500rpx;
+  height:500rpx;
+}
+.recode-detail-body button{
+  color:#fff;
+  width:530rpx;
+  background:#2088d6;
+  margin:100rpx 0 70rpx 0;
+}
+
+
+
+

@@ -1,0 +1,47 @@
+view{
+  width: 100%;
+}
+.banner {
+  background: #b5b5b5;
+  height: 320rpx;
+  text-align: center;
+}
+
+.banner  image{
+  width:750rpx;
+  height:320rpx;
+}
+.main {
+  height: 864rpx;
+}
+.content {
+  height: 425rpx;
+  margin-top: 75rpx;
+}
+#input {
+  height: 220rpx;
+}
+button {
+  top: 60rpx;
+}
+input {
+  border: 0.4rpx solid #444444;
+  padding-left: 30rpx;
+  margin-left:30rpx;
+  width:380rpx;
+  height: 66rpx;
+  border-radius: 10rpx;
+}
+image {
+  width: 86rpx;
+  height: 88rpx; 
+}
+#xm,#sfz{
+  display: inline-flex;
+  justify-content:center;
+  align-items:center;
+}
+.placeholder{
+  color: #bfbfbf;
+  font-size: 35rpx;
+}

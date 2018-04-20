@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="banner">
+    <image src="{{imageUrl+'images/cloudimg.png'}}"  mode='widthFix'></image>
+  </view>
+  <view class="main">
+    <form bindsubmit='toCloudMain_fun' bindreset=''>
+      <view class="content">
+        <view id="input">
+          <view id="xm">
+            <image src="../../../image/xm.png"></image>
+            <input placeholder="请输入您的姓名" name="name" placeholder-class="placeholder" value='{{userInfo.name}}'/>
+          </view>
+          <view id="sfz">
+            <image src="../../../image/sfz.png"></image>
+            <input placeholder="请输入您的身份证" name="sfz"  type='idcard' maxlength='18'  placeholder-class="placeholder"  value='{{userInfo.id}}'/>
+          </view>
+        </view>
+        <view id="button">
+          <button class='btn-big {{noClick == 1?"btn-disable":""}}' form-type='submit'>
+            实名认证
+          </button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

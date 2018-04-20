@@ -1,0 +1,44 @@
+.face-info-main{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.face-info-main image{
+  margin-top:160rpx;
+}
+
+.face-info-1{
+  margin-top:90rpx;
+}
+
+.face-info-button{
+  background: #09bb07;
+  color:#ffffff;
+  margin-top:60rpx;
+  width:480rpx;
+  height:90rpx;
+}
+
+.face-info-2{
+  margin-top:420rpx;
+  font-size:27rpx;
+}
+
+.face-info-3{
+  color:#09bb07;
+  font-size:27rpx;
+}
+
+
+.face-gif{
+  position: relative;
+}
+
+.img-gif1{
+  width:600rpx;
+  height:60%;
+  position:absolute;
+  left:65rpx;
+  top:300rpx;
+}

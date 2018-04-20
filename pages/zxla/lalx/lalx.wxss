@@ -1,0 +1,122 @@
+/* pages/zxla/fxxz/fxxz.wxss */
+.swiper-tab{
+  width: 100%; 
+  line-height: 100rpx;
+  font-size: 36rpx;
+  font-family: 微软雅黑;
+}
+.swiper-tab-list{
+  font-size: 30rpx; 
+  text-align: center; 
+  display: inline-block; 
+  width: 50%; 
+  color: #777777; 
+}
+.on{
+  color: #2088d6; 
+  border-bottom: 5rpx solid #2088d6;
+}
+.title{
+  text-align: center;
+  margin: 20rpx 0rpx
+}
+
+.txt{
+  color: #444
+}
+swiper-item{
+  overflow: auto;
+}
+
+.item{
+  display: flex;
+  width:90%;
+  margin: 0 auto;
+  border-radius: 8rpx;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50rpx;
+  background: #fff;
+}
+.item-body{
+  margin-left: 30rpx;
+}
+.img{
+  background: #2088d6;
+  border-bottom-left-radius: 10rpx;
+  border-top-left-radius: 10rpx;
+}
+
+.item-title{
+  font-weight: bolder;
+  color:#444;
+  margin-bottom: 30rpx;
+  display: inline-block;
+}
+
+.img image{
+  height:236rpx;
+  width:185rpx;
+}
+
+.arrow{
+  width: 5%;
+  height:100%;
+  text-align: center;
+  padding:30rpx 5rpx;
+}
+
+.arrow image{
+  width:25rpx;
+  height:25rpx;
+  display: inline-block;
+}
+.scroll-container{
+  height:98%;
+  background: #eeeeee;
+}
+
+.content{
+  padding: 10rpx 50rpx;
+}
+.content view{
+  padding:10rpx 5rpx;
+  line-height: 60rpx;
+}
+.tittle{
+  text-align: center;
+  margin-top:20rpx;
+}
+.txt{
+  color:#101010;
+  font-weight: bold;
+}
+button{
+ margin-top: 30rpx;
+ margin-bottom: 30rpx;
+}
+
+
+/* 立案记录  */
+.section{
+  background: #fff;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+.section .case-item{
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 20rpx 0rpx;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.ay{
+  color:#2088d6;
+}
+.ajzt-sh{
+  color:#f38727;
+}
+.ajzt-wc{
+  color:#1dad68;
+}

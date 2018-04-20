@@ -1,0 +1,285 @@
+<scroll-view>
+  <!-- 立案流程  -->
+  <view class = 'pageTitle ft-grey'>
+      立案流程
+  </view>
+
+  <!-- 立案流程 标题  -->
+  <view class='process fts-26'>
+    <view class='step'> 
+        <view class='num finish-step'>
+          <icon type="success" size="34" color="#2088d6"></icon>
+        </view>
+        <view>
+          提交材料
+        </view>
+      </view>
+      <text class='line finish-line'></text>
+      
+      <view class='step'> 
+        <view class='num finish-step'>
+          <icon type="success" size="34" color="#2088d6"></icon>
+        </view>
+        <view>
+          案件信息
+        </view>
+      </view>
+      <text class='line finish-line'></text>
+
+      <view class='step'> 
+        <view class='num finish-step'>
+        <view  class='num active-num'>3</view>
+        </view>
+        <view>
+          当事人信息
+        </view>
+      </view>
+  </view> 
+  <!-- 原告信息  -->
+  <view  class='box-padding'>
+    <view class='dsrxx-body-head '>
+      <view>
+        <text style='color:red;'>*</text>
+        <text  style="font-size:28rpx;">原告信息</text>
+      </view>
+       <view catchtap='addDsr' style='display:flex;justion-content:center;align-items:center;' data-type='1'>
+        <image src='../../../image/add.png'  style='width:30rpx;height:30rpx;'></image>
+        <text class='fts-26 color-blue' style='margin-left:8rpx;'>新增原告</text>
+      </view> 
+
+       <!-- <view bindtap='delaccuser' style='display:flex;justion-content:center;align-items:center;'>
+        <image src='../../../image/del.png'  style='width:30rpx;height:30rpx;'></image>
+        <text class='fts-26 ft-grey' style='margin-left:8rpx;'>删除原告</text>
+      </view>  -->
+    </view> 
+
+    <view class='accuser-name'  catchtap='changeCurrent' catchlongpress='deleteDsr'  data-type='1'>
+      <text class='fts-26 {{index == currentYgIndex?"active-user" : ""}}'  wx:if="{{ryxx.yg.length}}" wx:for="{{ryxx.yg}}" wx:key='{{index}}'  data-index = '{{index}}'>{{item.name}}</text>
+    </view>
+    <!--表单-->
+    <view  class=" list-all {{showYg == 1?'show-page':''}}">
+      <!--bindreset='resetForm'   -->
+      <form bindsubmit='saveForm'   data-type='1'>
+        <view  class='list-pre'>
+          <text>选择类型</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choiceType" value="{{lxIndexYg || currentYg.lx}}" data-type='1' range="{{type_arr}}">
+              <view class="picker">
+              {{ type_arr[lxIndexYg] || type_arr[currentYg.lx]}}
+              </view>
+              <image src='../../../image/arrrr.png'   class='only-img-position'
+              style='width:20rpx;height:35rpx;' >
+              </image>   
+            </picker>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>姓<text class='blank-2'></text>名</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'    name='name'
+            placeholder-style='text-align:right;color:#888;' value="{{currentYg.name}}">
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>身份证号</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入' type='idcard' maxlength='18'  name='sfz' value='{{currentYg.sfz}}'
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>民<text class='blank-2'></text>族</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choice_volk" value="{{mzIndexYg || currentYg.mz}}" data-type='1' range="{{volk_arr}}">
+              <view class="picker">
+              {{volk_arr[mzIndexYg] || volk_arr[currentYg.mz]}} 
+              </view>
+              <image src='../../../image/arrrr.png' class='only-img-position'
+              style='width:20rpx;height:35rpx;'>
+              </image>
+            </picker>
+          </view>
+        </view>
+        <view  class='list-pre'>
+          <text>性<text class='blank-2'></text>别</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choice_sex" value="{{xbIndexYg || currentYg.gender}}" data-type='1' range="{{sex_arr}}">
+              <view class="picker"> 
+              {{sex_arr[xbIndexYg] || sex_arr[currentYg.gender]}}
+              </view>
+              <image src='../../../image/arrrr.png' class='only-img-position'
+              style='width:20rpx;height:35rpx;'>
+              </image>
+            </picker>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>国<text class='blank-2'></text>籍</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choiceNation" value="{{gjIndexYg || currentYg.nationality}}"   data-type='1' range="{{nation_arr}}">
+              <view class="picker">
+              {{nation_arr[gjIndexYg] || nation_arr[currentYg.nationality]}}
+              </view>
+              <image src='../../../image/arrrr.png' class='only-img-position'gender
+              style='width:20rpx;height:35rpx;'>
+              </image>
+            </picker>
+          </view>
+        </view> 
+
+        <view  class='list-pre'>
+          <text>联系电话</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'  type='digit' maxlength='11'  name='tel' value='{{currentYg.tel}}'
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>地<text class='blank-2'></text>址</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'  name='address'  value='{{currentYg.address}}'
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-but'>
+          <button form-type='submit' class='fts-26'>保存</button>
+          <button bindtap ='reset' class='fts-26' data-type='1'>取消</button>
+        </view>
+      
+      </form>
+    </view>
+  </view>
+
+
+  <!-- 被告信息  -->
+  <view  class='box-padding'>
+    <view class='dsrxx-body-head '>
+      <view>
+        <text style='color:red;'>*</text>
+        <text  style="font-size:28rpx;">被告信息</text>
+      </view>
+       <view catchtap='addDsr' style='display:flex;justion-content:center;align-items:center;' data-type='2'>
+        <image src='../../../image/add.png'  style='width:30rpx;height:30rpx;'></image>
+        <text class='fts-26 color-blue' style='margin-left:8rpx;'>新增被告</text>
+      </view> 
+    </view> 
+
+    <view class='accuser-name' catchtap='changeCurrent'  catchlongpress='deleteDsr' data-type='2'>
+      <text class='fts-26  {{index == currentBgIndex?"active-user" : ""}}' wx:if="{{ryxx.bg.length}}" wx:for="{{ryxx.bg}}" wx:key='{{index}}'  data-index = '{{index}}'>{{item.name}}</text>
+    </view>
+
+    <!--表单-->
+    <view class="list-all {{showBg == 1?'show-page':''}}">
+      <form bindsubmit='saveForm' data-type='2'>
+        <view  class='list-pre'>
+          <text>选择类型</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choiceType" value="{{lxIndexBg || currentBg.lx}}" data-type='2' range="{{type_arr}}">
+              <view class="picker">
+              {{type_arr[lxIndexBg] || type_arr[currentBg.lx]}}
+              </view>
+              <image src='../../../image/arrrr.png'   class='only-img-position'
+              style='width:20rpx;height:35rpx;' >
+              </image>   
+            </picker>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>姓<text class='blank-2'></text>名</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'    name='name' value="{{currentBg.name}}"
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>身份证号</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'  type='idcard' maxlength='18'  name='sfz' value="{{currentBg.sfz}}"
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+     
+        <!-- 被告信息  -->
+        <view  class='list-pre'>
+          <text>民<text class='blank-2'></text>族</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choice_volk" value="{{mzIndexBg || currentBg.mz}}"  data-type='2' range="{{volk_arr}}">
+              <view class="picker">
+              {{volk_arr[mzIndexBg] || volk_arr[currentBg.mz]}} 
+              </view>
+              <image src='../../../image/arrrr.png' class='only-img-position'
+              style='width:20rpx;height:35rpx;'>
+              </image>
+            </picker>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>性<text class='blank-2'></text>别</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choice_sex" value="{{xbIndexBg || currentBg.gender}}"  data-type='2' range="{{sex_arr}}">
+              <view class="picker"> 
+              {{sex_arr[xbIndexBg] || sex_arr[currentBg.gender]}}
+              </view>
+              <image src='../../../image/arrrr.png' class='only-img-position'
+              style='width:20rpx;height:35rpx;'>
+              </image>
+            </picker>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>国<text class='blank-2'></text>籍</text>
+          <view class='choice-list-sty'>
+            <picker bindchange="choiceNation" value="{{gjIndexBg || currentBg.nationality}}"   data-type='2' range="{{nation_arr}}">
+              <view class="picker">
+              {{nation_arr[gjIndexBg] || nation_arr[currentBg.nationality]}}
+              </view>
+              <image src='../../../image/arrrr.png' class='only-img-position'
+              style='width:20rpx;height:35rpx;'>
+              </image>
+            </picker>
+          </view>
+        </view> 
+
+        <view  class='list-pre'>
+          <text>联系电话</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'  type='number' maxlength='11'   name='tel' value="{{currentBg.tel}}"
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-pre'>
+          <text>地<text class='blank-2'></text>址</text>
+          <view  class='inputtext-sty'>
+            <input  placeholder='请输入'  name='address'  value="{{currentBg.address}}"
+            placeholder-style='text-align:right;color:#888;'>
+            </input>
+          </view>
+        </view>
+
+        <view  class='list-but'>
+          <button form-type='submit' class='fts-26'>保存</button>
+          <button data-type='2' bindtap='reset' class='fts-26'>取消</button>
+        </view>
+      </form>
+    </view>
+  </view>
+  <button class='btn-big bto {{noClick==1?"btn-disable":""}}' bindtap='submitCase'>提交立案</button>
+</scroll-view>

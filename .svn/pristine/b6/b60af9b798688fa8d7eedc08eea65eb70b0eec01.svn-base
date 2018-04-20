@@ -1,0 +1,64 @@
+<view class="swiper-tab">
+ <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">在线立案</view>
+ <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">立案记录</view>
+</view>
+
+
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+ 
+ <swiper-item>
+
+  <!--立案类型选择  -->
+
+  <scroll-view class='scroll-container' scroll-y='true' scroll-with-animation='true' wx:if="{{fxxz == 0}}">
+    <view class='title ft-grey fts-26'>
+      <text> —— </text><text class='txt fts-28'> 请选择类型 </text><text> —— </text>
+    </view>
+
+    <view class='item' wx:for="{{pageInfo}}" wx:key='index' catchtap='wyla' data-type='index'>
+      <view class='img'>
+        <image src='{{item.titleImg}}'></image>
+      </view>
+      <view class='item-body'>
+        <text class='fts-28 item-title'>{{item.title}}</text>
+        <view class='fts-26 ft-grey'>{{item.context}}</view>
+      </view>
+      <view class='arrow'>
+        <image src='../../../image/arrow.png'></image>
+      </view>
+    </view>
+  </scroll-view>
+ 
+  <!--风险须知  -->
+  <view class='fxxz' wx:else>
+    <view class='tittle ft-grey fts-26'>
+      <text> —— </text><text class='txt'> 诉讼风险须知 </text><text> —— </text>
+    </view>
+    <view class='content fts-26'>
+        <view>
+           一、任何诉讼或仲裁均存在败诉或部分败诉的风险，案件结果主要取决于委托人提供的证据充分程度，对方当事人提出的不利于我方的证据，法庭或仲裁庭对证据的采信和由此查明的事实等客观因素。
+        </view>
+        <view>
+          二、代理人在办理委托事务或者案件过程中，提供的是法律服务，收取的律师费是服务费;律师的代理工作是运用法律武器维护当事人的合法权益，而不是包打赢官司。
+        </view>
+        <view>
+          三、代理人在办理案件过程中，可以对法院、仲裁庭可能认定的案件事实和案件处理结果进行合理分析或推测，并告知委托人，但上述分析或推测不是代理人对案件结果的承诺。
+        </view>
+        <view>
+          四、当事人在办理委托前应当仔细阅读风险告知书，代理委托一旦签订后，案件经法院判决或者仲裁庭裁决后，或者在诉讼中和解、调解，或者当事人自行撤诉，代理工作即告结束，所收取的代理费不予退还。
+        </view>
+    </view>
+    <button class='btn-big' bindtap='agree'>我接受</button>
+  </view>    
+
+
+<!-- 立案记录  -->
+ </swiper-item>
+ <swiper-item>
+   <scroll-view  class='scroll-container' scroll-y='true' scroll-with-animation='true'>
+    
+   </scroll-view>
+ </swiper-item>
+
+</swiper>

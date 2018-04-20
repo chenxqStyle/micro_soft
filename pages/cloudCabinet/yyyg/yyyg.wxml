@@ -1,0 +1,107 @@
+<view class="swiper-tab">
+ <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">预约云柜</view>
+ <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">预约记录</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+ 
+ <swiper-item>
+  <scroll-view class='scroll-container' scroll-y='true' scroll-with-animation='true'>
+    <ul>
+      <!-- 动态生成列表  -->
+       <li class="yyyg" wx:for="{{caseList}}" wx:key='index'>
+         <view class="line">
+           <text space="emsp" class="title">案<text class='blank-2'></text>号：</text><text class="content color-blue">{{item.ah}}</text>   
+         </view>
+         <view class="line">
+           <text space="emsp" class="title">案<text class='blank-2'></text>由：</text><text class="content">{{item.ay}}</text>           
+         </view>
+         <view class="line">
+           <text space="emsp" class="title">当<text class='blank-3'></text>事<text class='blank-3'></text>人：</text>
+            <view  class="content">
+              <view>
+                 <text>原告：</text><text>{{item.yg}}</text>
+              </view>
+              <view>
+                 <text>被告：</text><text>{{item.bg}}</text>
+              </view>
+              <view>
+                <text>原告代理人：</text><text>{{item.ygdlr}}</text>
+              </view>
+              <view>
+                <text>被告代理人：</text><text>{{item.bgdlr}}</text>
+              </view>
+            </view>
+         </view>
+         <view class="line">
+           <text space="emsp" class="title">承<text class='blank-3'></text>办<text class='blank-3'></text>人：</text><text class="content">{{item.cbr}}</text>          
+         </view>
+         <view class="line" data-id = "{{item.id}}">
+           <button  catchtap='goToYy' data-id = "{{item.id}}" class='btn-small {{item.is_order == 1 ? "btn-disable":" "}}'>{{item.is_order == 1?'已预约':'我要预约'}}</button>         
+         </view>
+       </li>
+    </ul>
+  </scroll-view>
+ </swiper-item>
+
+ <swiper-item>
+   <scroll-view  class='scroll-container' scroll-y='true' scroll-with-animation='true'>
+     <ul wx:if='{{showDetail == 0}}'>
+       <li class="yyjl" wx:for='{{yyCaseList}}' 
+       catchtap='getDetail'  
+       data-order='{{item.id}}' wx:key='index'>
+          <view class="record">
+            <!--标题内容  -->
+            <view class='yy-title-content'>
+              <icon type='waiting' size='20'></icon>
+              <text class='yy-title fts-28'>{{item.happen_time}}</text>
+              <text class='yy-state' wx:if="{{item.state == 0}}">未激活</text>
+            </view>
+            <view class='ft-grey yy-info'>
+              <text>案<text class='blank-2'></text>号：</text><text>{{item.ah}}</text>
+            </view>
+            <view class='ft-grey yy-info'>
+              <text>承<text class='blank-3'></text>办<text class='blank-3'></text>人：</text><text>{{item.cbr}}</text>
+            </view>
+          </view>
+          <view class='arrow' bindtap='getDetail' >
+            <image src='../../../image/arrow.png' ></image>
+          </view>
+       </li>
+     </ul>
+     <!--展示详情  -->
+    <view class='yy-detail' wx:else>
+      <!--头部信息  -->
+      <view class='detail-tittle'>
+        <image src='../../../image/type.png'></image>
+        <view class='fts-26 detail-time'>
+          <view>
+            预约时间：<text>{{yyDetail.happen_time}}</text>
+          </view>
+          <view>
+            有效期至：<text>{{yyDetail.effective_time}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 二维码展示  -->
+      <view class='ewm'>
+        <image src='{{yyDetail.qr_code_url}}'></image>
+        <text class='fts-26 ft-grey'>请至导诉台激活二维码</text>
+      </view>
+      <!--底部按钮  -->
+      <button class='btn-big dst-nav'  bindtap='showDialog'>
+        导诉台导航
+      </button>
+
+    </view>
+     <view  wx:if='{{isShowDialog}}'  
+      style='background:rgba(0,0,0,0.7);z-index:900;width:100vw;height:98vh;display:flex;justify-content:center;align-items:center;position:absolute;top:0'>
+        <image  bindtap='hideDialog'  bindtap='hideDialog'
+        src='../../../image/dialog.png'  
+        style='width:600rpx;height:664rpx;'>
+        </image>
+      </view>
+   </scroll-view>
+ </swiper-item>
+
+</swiper>

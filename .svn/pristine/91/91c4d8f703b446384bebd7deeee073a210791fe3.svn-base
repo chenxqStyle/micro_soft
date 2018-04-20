@@ -1,0 +1,106 @@
+var app = getApp()
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    myCaseList:[]
+  },
+  //显示具体的商品信息
+  showCaseDetail_fun(event){
+    let case_id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../mycaseListDetails/mycaseListDetails?case_id='+case_id,
+    });
+  },
+  
+  getMyCaseList(){
+    var that = this;
+    wx.request({
+      url: app.globalData.httpUrl + 'case/case_list.php',
+      data: {
+        sfz: wx.getStorageSync('sfz'),
+      },
+      success: function (res) {
+        console.log('获取我的案件列表：', res)
+
+        let data = res.data
+
+        if (data.state == 1) {
+          that.setData({ myCaseList: data.case_list })
+        } else {
+          wx.showToast({
+            title: '验证失败',
+            icon: 'loading',
+            duration: 500
+          })
+        }
+      },
+      fail: function (err) {
+        console.log(err)
+      },
+      complete: function () {
+
+      }
+    })
+  },
+
+
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getMyCaseList()
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    
+  }
+})

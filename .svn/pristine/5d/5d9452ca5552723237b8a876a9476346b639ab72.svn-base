@@ -1,0 +1,27 @@
+<view class='face-info-main'  wx:if='{{isShowVideo}}'>
+  <image src='../../../image/index/face_info.png' 
+    style='width:195rpx;'
+    mode='widthFix' >
+  </image>
+  <view class='face-info-1'>
+      请进行人脸识别验证身份
+  </view>
+  <view>
+    并确保XXX本人操作
+  </view>
+  <button class='face-info-button' bindtap='next_login'>下一步</button>
+  <view class='face-info-2'>
+    点击按钮即代表你同意腾讯使用上述信息
+  </view>
+  <view class='face-info-3'>
+    查看详情
+  </view>
+</view>
+
+<view  class='face-video' wx:if='{{!isShowVideo}}'>
+   <!-- <video src='https://fy.njxnet.com/video/rlsb_ios.mp4'   
+  style='width:750rpx;height:100vh;' 
+  autoplay controls  bindended='videndToNextPage_fun'>
+  </video> -->
+  <image></image>
+</view>

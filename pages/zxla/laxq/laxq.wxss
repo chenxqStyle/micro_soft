@@ -1,0 +1,44 @@
+/* pages/zxla/laxq/laxq.wxss */
+.scroll-container{
+  height:98%;
+  background: #eeeeee;
+}
+.section{
+  background: #fff;
+  font-size: 26rpx;
+}
+
+.title{
+  padding: 20rpx 40rpx;
+  font-weight: bolder;
+  letter-spacing: 3rpx;
+}
+
+.section .case-item{
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 20rpx 0rpx;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+}
+.ay{
+  color:#000;
+}
+.ajzt-sh{
+  color:#f38727;
+}
+.ajzt-wc{
+  color:#1dad68;
+}
+.detail-item{
+  border: none;
+  padding: 10rpx 0rpx;
+}
+.dsr-detail{
+  background: #fff;
+  font-size: 26rpx;
+  padding: 20rpx 38rpx;
+}
+.txt{
+  color:#000;
+}

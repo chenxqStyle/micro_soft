@@ -1,0 +1,72 @@
+.mycaselist-main{
+  background: #f5f5f5;
+  width:100vw;
+  height:100vh;
+}
+
+.mycaselist-per{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding:20rpx 0rpx;
+  background: #fff;
+  border-top:1px solid #e5e5e5;
+  border-bottom:1px solid #e5e5e5;
+}
+
+.mycaselist-per view{
+  display:flex;
+  padding-left:30rpx;
+  padding-right:30rpx;
+  position: relative;
+}
+
+.mycaselist-per view:not(:first-child){
+  margin-top:8rpx;
+}
+
+.mycaselist-per view text:first-child{
+  /* color:gray;
+  width:125rpx;
+  font-size:28rpx; */
+  /* text-align:justify;
+  text-align-last: justify; */
+}
+
+/* .mycaselist-per view text:first-child::after{
+  position: absolute;
+	left: 160rpx;
+	content: ':'
+} */
+
+
+.text-first{
+  color:gray;
+  width:125rpx;
+  font-size:28rpx;
+}
+
+.text-second{
+  margin-left:20rpx;
+  font-size:28rpx;
+  width:530rpx;
+}
+/* .mycaselist-per view text:last-child{
+  margin-left:20rpx;
+  font-size:28rpx;
+  width:530rpx;
+} */
+
+.mycaselist-per + .mycaselist-per{
+  margin-top:20rpx;
+}
+
+.blank-2{
+width:52rpx;
+display: inline-block;
+}
+
+.blank-3{
+width:13rpx;
+display: inline-block;
+}

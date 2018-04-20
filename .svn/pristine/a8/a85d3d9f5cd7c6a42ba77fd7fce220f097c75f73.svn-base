@@ -1,0 +1,61 @@
+let app = getApp();
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgs:[{
+      imgsrc:'../../../image/name.png',
+      imgmode:'widthFix'
+    },{
+      imgsrc:'../../../image/idcard.png',
+      imgmode: 'widthFix'
+    }],
+    imageUrl: app.globalData.httpUrl,
+    userInfo: {
+      name: '陈小群',
+      id: '34082219920320331X'
+    },
+  },
+  //智能表单的登录
+  formLogin_fun:function(e){
+    wx.setStorageSync('sfz', e.detail.value.formidcard)
+    wx.request({
+      url: app.globalData.httpUrl + 'sfz_verify.php', 
+      data: {
+        name: e.detail.value.formname,
+        sfz: e.detail.value.formidcard
+      },
+      header: {
+        'content-type': 'application/json' 
+      },
+      success: function (res) {
+        //表单验证成功
+        if (res.data.state === 1){
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.navigateTo({
+            url: '../brainform_main/brainform_main',
+            success: function (res) {
+
+            }
+          })
+        }else{
+          //表单验证失败
+          wx.showToast({
+            title: '验证失败',
+            icon: 'loading',
+            duration: 500
+          })
+        }
+      }
+    })
+
+  },
+
+
+
+})

@@ -1,0 +1,165 @@
+scroll-view{
+  height:98%;
+  background: #eeeeee;
+}
+/* 头部信息  */
+.pageTitle{
+   padding: 20rpx 50rpx;
+} 
+.step{
+  display: inline-block
+}
+
+.num{
+  width: 68rpx;
+  height: 68rpx;
+  background: #dfdfdf;
+  border-radius: 50%;
+  color:#888;
+  text-align: center;
+  line-height: 68rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.process{
+  display: flex;
+  justify-content: center;
+  padding: 50rpx 0rpx;
+  color:#888;
+  background: #fff;
+}
+.process .line{
+  margin-top: 4%;
+  height:0;
+  width: 120rpx;
+  border-bottom:3rpx dashed #888;
+}
+.active-step{
+  color:#333;  
+}
+.active-num{
+  color:#fff;
+  background: #2088d6;
+}
+.finish-step{
+  background: #fff;
+}
+.line.finish-line{
+  border-bottom:3rpx solid #2088d6;
+}
+
+.box-padding{
+  background:#fff;
+}
+
+.dsrxx-body-head{
+  display: flex;
+  justify-content: space-between;
+  margin-top:30rpx;
+}
+
+.dsrxx-body-head view{
+  padding:0 30rpx 0 30rpx;
+}
+
+.accuser-name{
+  margin-top:20rpx;
+  border-bottom:1px solid #dfdfdf;
+  padding:0 30rpx 30rpx 38rpx;
+}
+
+.accuser-name  text{
+  border:1px solid #2088d6;
+  border-radius:8rpx;
+  padding:5rpx 20rpx;
+  margin-left: 8rpx;
+}
+
+.list-all{
+  font-size:26rpx;
+  height: 0rpx;
+  display: none;
+  transition:height 0.6s; 
+}
+
+.list-pre{
+  display:flex;
+  line-height:70rpx;
+  justify-content: space-between;
+  border-bottom:1px solid #dfdfdf;
+  padding:0 30rpx;
+  position:relative;
+}
+/* 
+.list-pre text:first-child{
+  width:120rpx;
+  text-align: justify;
+  text-align-last: justify;
+} */
+/* 
+.list-pre text:first-child::after{
+  position: absolute;
+	left: 160rpx;
+	content: ':'
+} */
+
+.only-img-position{
+  position: absolute;
+  right:20rpx;
+  top:20rpx;
+}
+
+
+.inputtext-sty{
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+  width:530rpx;
+}
+
+.inputtext-sty input{
+  width:100%;
+}
+
+.choice-list-sty{
+  width:560rpx;
+}
+
+.picker{
+  width:90%;
+  display:flex;
+  justify-content: left;
+  align-items: left;
+  margin-left:10rpx;
+  height:66rpx;
+  padding-left: 20rpx;
+}
+
+.list-but{
+  display:flex;
+  justify-content: space-around;
+  padding:50rpx;
+}
+
+.list-but button{
+  border:1px solid #2088d6;
+  border-radius:8rpx;
+  color:#2088d6;
+  background: #fff;
+}
+
+.show-page{
+  height:740rpx;
+  display: block;
+  transition: height 0.6s;
+}
+
+.active-user{
+  background:#2088d6;
+  color:#fff; 
+}
+
+.bto{
+  margin: 30rpx auto;
+}

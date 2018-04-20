@@ -1,0 +1,90 @@
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    //轮播图的地址
+    imgUrls:[
+      '../../image/index/case.png',
+      '../../image/index/face.png',
+      '../../image/index/welcome.png',
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1500,
+    //页面图标的地址
+    imgs:{
+      middleImg:[{
+          imgsrc:'../../image/index/miccall.png',
+          imgmode:'widthFix'
+        },{
+          imgsrc:'../../image/index/brandform.png',
+          imgmode:'widthFix'
+      }],
+      //底部的图片
+      bottomImg:[{
+        imgsrc: '../../image/index/bussreser.png',   //业务预约
+        imgmode: 'widthFix'
+      },{
+        imgsrc: '../../image/index/currentcase.png',   //在线立案
+        imgmode: 'widthFix'
+      },{
+          imgsrc: '../../image/index/cloudcabinet.png',   //预约云柜
+          imgmode: 'widthFix'
+      },{
+        imgsrc: '../../image/index/minecase.png',   //我的案件
+        imgmode: 'widthFix'
+      }],
+      overplusHeight:0,   //视窗剩余的高度
+    }
+  },
+  //调转到智能填单的主页面
+  navBrandIndex_fun:function(){
+    wx.navigateTo({
+      url: '../zhinengform/brainform/brainform',
+      success:function(res){
+
+      }
+    });
+  },
+  // 跳到在线立案
+  toZxla_fun:function(){
+    wx.navigateTo({
+      url: '../zxla/lalx/lalx',
+    });
+  },
+
+  //调转到我的案件的主页面
+  toMycase_fun:function(){
+    wx.navigateTo({
+      url: '../minecase/mycase/mycase',
+      success: function (res) {
+
+      }
+    });
+  },
+  //调转到预约云柜
+  toCloudLogo_fun:function(){
+    wx.navigateTo({
+      url: '../cloudCabinet/smrz/smrz',
+      success: function (res) {
+
+      }
+    });
+  },
+  onLoad: function () {
+    var that = this;
+   
+    // 获取系统信息
+    wx.getSystemInfo({
+      success: function (res) {
+        console.log(res, 'resf')
+        that.setData({
+          overplusHeight: res.windowHeight -  230
+        })
+      }
+    })
+  }
+})

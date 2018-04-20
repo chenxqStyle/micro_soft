@@ -1,0 +1,105 @@
+<!--pages/zxla/sccl/sccl.wxml-->
+<!--主流程  -->
+<scroll-view>
+
+    <!--立案流程  -->
+    <view class = 'pageTitle ft-grey'>
+      立案流程
+    </view>
+
+    <view class='process fts-26'>
+
+      <view class='step'> 
+        <!--显示数字  -->
+        <view class='num finish-step'>
+          <icon type="success" size="34" color="#2088d6"></icon>
+        </view>
+        <!--显示标题  -->
+        <view>
+          提交材料
+        </view>
+      </view>
+
+      <!--line  -->
+      <text class='line finish-line'></text>
+
+      <view  class='step .active-step'>
+        <!--显示数字  -->
+        <view  class='num active-num'>2</view>
+        <!--显示标题  -->
+        <view>
+          案件信息
+        </view>
+      </view>
+
+       <text  class='line'></text>
+
+      <view  class='step'>
+        <!--显示数字  -->
+        <view  class='num'>3</view>
+        <!--显示标题  -->
+        <view>
+          当事人信息
+        </view>
+      </view>
+    </view>
+
+    <!--立案材料  -->
+    <view class='content'>
+      <!-- 多选 选择案由信息  -->
+      <view class="section">
+        <view class="section__title"><text class='star'>*</text> <text space='ensp'>案<text class='blank-2'></text>由：</text></view>
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+          <view class="picker" wx:if='{{multiIndex.length}}'>
+            {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
+          </view>
+          <view class='picker ft-grey' wx:else>请选择案由</view>
+        </picker>
+      </view>
+
+      <!-- 单选 选择立案身份  -->
+      <view class="section">
+        <view class="section__title"><text class='star'>*</text> <text  space='ensp'>立案身份：</text> </view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker" wx:if="{{index>=0}}">
+            {{array[index]}}
+          </view>
+          <view class="picker ft-grey" wx:else>
+            请选择立案身份
+          </view>
+        </picker>
+      </view>
+      <form bindsubmit='inputUserInfo'>
+          <!--手机号码填写  -->
+          <view class="section">
+            <view>
+              <text class='star'>*</text> <text  space='ensp'>手机号码：</text>
+            </view>
+            <input  maxlength="11" name='tel' type="digit" placeholder="请输入手机号码" />
+          </view>
+
+          <!--诉讼标的金额  -->
+          <view class="section">
+            <view>
+              <text class='star'>*</text> 诉讼标的金额：
+            </view>
+            <input type="digit" name='bd' placeholder="请输入标的金额" />
+          </view>
+
+          <!-- 诉讼与事实请求 -->
+          <view class="ssqq">
+            <view>
+              <text class='star'>*</text> 诉讼与事实请求：
+            </view>
+            <textarea name='ssqq' placeholder="请输入文字" />
+          </view>
+
+           <button class='btn-big {{noClick == 1?"btn-disable":""}}' form-type='submit'>下一步</button>
+           
+      </form>
+      
+
+     
+    </view>
+
+</scroll-view>

@@ -1,0 +1,43 @@
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    isShowVideo:true    //是否显示视频部分
+  },
+  //验证通过
+  next_login:function(){
+    let _this = this;
+    _this.setData({
+      isShowVideo:false
+    });
+  },
+  //视频播放完之后触发的事件
+  videndToNextPage_fun:function(){
+    let _this = this;
+    
+    wx.navigateTo({
+      url: '../mycaseList/mycaseList',
+      success: function (res) {
+        _this.setData({
+          isShowVideo: true
+        });
+      }
+    });
+
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+
+
+
+  
+
+  
+})

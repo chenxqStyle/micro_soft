@@ -1,0 +1,65 @@
+/* pages/zxla/ajxx/ajxx.wxss */
+scroll-view{
+  height:98%;
+  background: #eeeeee;
+}
+/* 头部信息  */
+.pageTitle{
+   padding: 20rpx 50rpx;
+} 
+.step{
+  display: inline-block
+}
+
+.num{
+  width: 63rpx;
+  height: 63rpx;
+  background: #dfdfdf;
+  border-radius: 50%;
+  color:#888;
+  text-align: center;
+  line-height: 63rpx;
+  font-size: 30rpx;
+  margin: 0 auto;
+  margin-bottom: 10rpx;
+}
+.process{
+  display: flex;
+  justify-content: center;
+  padding: 50rpx 0rpx;
+  color:#888;
+  background: #fff;
+}
+.process .line{
+  margin-top: 4%;
+  height:0;
+  width: 120rpx;
+  border-bottom:3rpx dashed #888;
+}
+.active-step{
+  color:#333;  
+}
+.active-num{
+  color:#fff;
+  background: #2088d6;
+}
+.finish-step{
+  background: #fff;
+}
+.line.finish-line{
+  border-bottom:3rpx solid #2088d6;
+}
+
+/* 中间上传材料部分 */
+.content{
+  margin-top: 20rpx;
+  background:#fff;
+  padding-bottom:50rpx;
+}
+
+.content>view{
+  width:90%;
+  margin: 0 auto;
+  border-bottom:2rpx solid #888; 
+  padding: 25rpx 0rpx;
+}

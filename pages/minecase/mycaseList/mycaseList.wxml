@@ -1,0 +1,23 @@
+<view class='mycaselist-main'>
+  <scroll-view scroll-y style="height: 100vh;">
+    <view class='mycaselist-per' bindtap='showCaseDetail_fun'  wx:for="{{myCaseList}}" wx:key="{{index}}" data-id='{{item.id}}'>
+    <view>
+      <text  class='text-first'>立案日期:</text>
+      <text class='text-second'>{{item.lasj}}</text>
+    </view>
+    <view>
+      <text class='text-first'>案<text class='blank-2'></text>号:</text>
+      <text  class='text-second' style='color:#2088d6;'>{{item.ah}}</text>
+    </view>
+    <view>
+      <text class='text-first'>当<text class='blank-3'></text>事<text class='blank-3'></text>人:</text>
+      <text class='text-second'>{{'原告：'+item.yg+'，被告：'+item.bg+'，原告代理人：'+item.ygdlr+'，被告代理人：'+item.bgdlr}}</text>
+    </view>
+    <view>
+      <text class='text-first'>案<text class='blank-2'></text>由:</text>
+      <text class='text-second'>{{item.ay}}</text>
+    </view>
+  </view>
+  </scroll-view>
+</view>
+  

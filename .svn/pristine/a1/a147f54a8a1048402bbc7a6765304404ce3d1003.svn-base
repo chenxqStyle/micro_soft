@@ -1,0 +1,64 @@
+var app = getApp()
+Page({
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    imgs: [{
+      imgsrc: '../../../image/name.png',
+      imgmode: 'widthFix'
+    }, {
+      imgsrc: '../../../image/idcard.png',
+      imgmode: 'widthFix'
+    }],
+    userInfo: {
+      name: '',
+      id: ''
+    },
+    imageUrl: app.globalData.httpUrl
+  },
+
+  toCloudMain_fun: function (e) {
+    wx.request({
+      url: app.globalData.httpUrl + 'sfz_verify.php',
+      data: {
+        sfz: e.detail.value.sfz,
+        name: e.detail.value.name
+      },
+      success: function (res) {
+        let data = res.data
+        if (data.state == 1) {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
+          wx.navigateTo({
+            url: '../faceInfo/faceInfo',
+            success: function () {
+              wx.setStorageSync('sfz', e.detail.value.sfz)
+            }
+          });
+        } else {
+          wx.showToast({
+            title: '验证失败',
+            icon: 'loading',
+            duration: 500
+          })
+        }
+      },
+      fail: function (err) {
+        console.log(err)
+      },
+      complete: function () {
+
+      }
+    })
+  },
+
+
+
+
+
+
+})

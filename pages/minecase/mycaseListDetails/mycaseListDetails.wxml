@@ -1,0 +1,46 @@
+<view class='casedetails-main'>
+  <view class='case-datail-up'>
+    <view>
+      <text class='text1-first'>案<text class='blank-2'></text>号:</text>
+      <text class='text1-second'>{{caseDetail.case.ah}}</text>
+    </view>
+    <view>
+      <text class='text1-first'>案<text class='blank-2'></text>由:</text>
+      <text class='text1-second'>{{caseDetail.case.ay}}</text>
+    </view>
+    <view>
+      <text class='text1-first'>承<text class='blank-3'></text>办<text class='blank-3'></text>人:</text>
+      <text class='text1-second'>{{caseDetail.case.cbr}}</text>
+    </view>
+    <view>
+      <text class='text1-first'>立案时间:</text>
+      <text class='text1-second'>{{caseDetail.case.lasj}}</text>
+    </view>
+  </view>
+  <view class='case-datail-down' wx:for="{{caseDetail.case_node_list}}" wx:key='{{index}}'>
+    <view  class='deatil-down-1'>
+      <image 
+        src='../../../image/time.png' 
+        style='width:30rpx;' mode='widthFix'>
+      </image> 
+      <text>2017-10-31 10:20</text>  
+    </view>
+    <view  class='detail-down-sty'>
+      <text class='down-style1'>节点名称</text>
+      <text class='down-style2' >{{item.node == 1?'收案':'结案'}}</text>
+    </view>
+    <view class='detail-down-sty'>
+      <text class='down-style1'>节点状态</text>
+      <text class='down-style2'>{{item.state == 1?'完成':'未完成'}}</text>
+    </view>
+    <view class='detail-down-sty'>
+      <text class='down-style1'>承<text class='blank-3'></text>办<text class='blank-3'></text>人</text>
+      <text class='down-style2'>{{item.cbr}}</text>
+    </view>
+    <view class='detail-down-sty'>
+      <text class='down-style1'>起止时间</text>
+      <text class='down-style2'>{{item.start_time +' 至 '+item.end_time}}</text>
+    </view>
+
+  </view>
+</view>

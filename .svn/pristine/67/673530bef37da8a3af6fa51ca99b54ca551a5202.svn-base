@@ -1,0 +1,162 @@
+<view  class='brainform-main'>
+  <view class="brainform-swiper-tab">
+    <view 
+      class="brainform-swiper-list {{currentTab==0 ? 'on' : ''}}" 
+      data-current="0" 
+      bindtap="swichNav">
+      智能填单
+    </view>
+    <view 
+      class="brainform-swiper-list {{currentTab==1 ? 'on' : ''}}" 
+      data-current="1" 
+      bindtap="swichNav">
+      填单记录
+    </view>
+  </view>
+
+ <swiper current="{{currentTab}}" 
+  class="swiper-box" 
+  duration="300" 
+  style="height:{{winHeight - 31}}px" 
+  bindchange="bindChange">
+  <!--智能填单-->
+  <swiper-item>
+    <view  class='form-list-main'  wx:if='{{isShowFormDetail}}'>
+        <block wx:for='{{listData}}' wx:key="id">
+          <view  bindtap='changeFormDetail_fun' 
+          data-code='{{item.code}}'>{{item.name}}</view>
+        </block>
+    </view>
+
+    <!--智能填单的详情页-->
+    <view  class='form-list-detail' wx:if='{{!isShowFormDetail}}'>
+      <form bindsubmit='caseDetail_fun'>
+        <view class='form-details-top'>
+        <text>当事人送达地址确认书</text>
+      </view>
+      <view  class='form-details-middle'>
+        <view  class='detail-middle-text1'>
+          <text>案由</text>
+          <input placeholder='请输入' 
+          name='casereason'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text1'>
+          <text>案号</text>
+          <input placeholder='请输入' 
+          name='casenum'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text1'>
+          <text>当事人</text>
+          <input placeholder='请输入' 
+          name='casepeo'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text1'>
+          <text>送达地址</text>
+          <input placeholder='请输入' 
+          name='caseaddr'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text1'>
+          <text>邮编</text>
+          <input placeholder='请输入' 
+          name='casepost'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text1'>
+          <text>联系电话</text>
+          <input placeholder='请输入' 
+          name='casephone'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text2'>
+          <text>电子送达地址</text>
+          <input placeholder='请输入' 
+          name='caseeaddr'
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text2'>
+          <text>其它联系方式</text>
+          <input placeholder='请输入'
+          name='otheraddr' 
+          placeholder-style='text-align:right;color:#bfbfbf;'>
+          </input>
+        </view>
+        <view class='detail-middle-text3'>
+          <text>诉讼与事实请求:</text>
+          <view  style='border:1px solid #efefef;width:670rpx;height:230rpx;border-radius:8rpx;margin-top:5rpx'></view>
+          <!-- <textarea placeholder='请输入文字'></textarea> -->
+        </view>
+      </view>
+      <view  class='form-details-bottom'>
+        <button form-type='submit'> 提交</button>
+      </view>
+      </form>
+      
+    </view>
+  </swiper-item>
+
+  <!--填单记录-->
+  <swiper-item>
+    <!--填单记录的列表-->
+    <view  wx:if='{{isShowRecodeDetail}}' >
+      <scroll-view  
+      scroll-y style='height:90vh;' 
+      class='form-list-recode'>
+        <view  class='form-list-pre'  wx:for='{{tiandan_list}}
+        data-type='{{item.type}}'
+        data-zentdid ='{{item.id}}'
+        bindtap='toRecodeListDetail_fun'>
+          <view class='list-pre-left'>
+            <view>
+               <image src='../../../image/time.png' 
+              style='width:30rpx;height:30rpx;'>
+              </image> 
+              {{item.happen_time}}
+            </view>
+            <view  style='margin-left:35rpx;'>
+              {{item.type_name}}
+            </view>
+          </view>
+          <image src='../../../image/arr.png' 
+          style='width:20rpx;height:30rpx;'>
+          </image>
+        </view>
+  
+         
+         
+      
+
+      </scroll-view>
+      
+    </view>
+
+    <!--填单记录的详情-->
+    <view wx:if='{{!isShowRecodeDetail}}' class='list-recode-detail'>
+      <view class='recode-detail-body'>
+        <view  class='detail-body-top'>
+          <image src='../../../image/type.png' style='width:70rpx;height:70rpx;'></image>
+          <view  style='margin-left:30rpx;'>
+            <view>文书类型:{{typecode}}</view>
+            <view>填单时间:{{happen_time}}</view>
+          </view>
+        </view>
+        <image 
+          src='{{codeimg}}'>
+        </image>
+        <view  style='color:gray;font-size:30rpx;'>请在自助打印设备上扫描二维码打印文书</view>
+        <button>自助打印设备导航</button>
+      </view>
+    </view>
+  </swiper-item>
+</swiper> 
+</view>

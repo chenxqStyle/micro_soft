@@ -1,0 +1,116 @@
+<!--pages/zxla/sccl/sccl.wxml-->
+<!--主流程  -->
+<scroll-view>
+
+    <!--立案流程  -->
+    <view class = 'pageTitle ft-grey'>
+      立案流程
+    </view>
+
+    <view class='process fts-26'>
+
+      <view class='step active-step'> 
+        <!--显示数字  -->
+        <view class='num active-num'>1</view>
+        <!--显示标题  -->
+        <view>
+          提交材料
+        </view>
+      </view>
+
+      <!--line  -->
+      <text class='line'></text>
+
+      <view  class='step'>
+        <!--显示数字  -->
+        <view  class='num'>2</view>
+        <!--显示标题  -->
+        <view>
+          案件信息
+        </view>
+      </view>
+
+       <text  class='line'></text>
+
+      <view  class='step'>
+        <!--显示数字  -->
+        <view  class='num'>3</view>
+        <!--显示标题  -->
+        <view>
+          当事人信息
+        </view>
+      </view>
+    </view>
+
+    <!--立案材料  -->
+    <view class='content'>
+
+      <!--起诉状  -->
+      <view class='qsz'>
+        <view class='title'>
+          <text class='star'>*</text>
+          <text class='name'>请添加起诉状</text>
+        </view>
+        <view class='info'>
+          <view class='material' wx:if='{{qsz.length}}'>
+            <image></image>
+          </view>
+          <view class='pic'>
+            <image src='../../../image/pic.png'></image>
+          </view>
+        </view>
+      </view>
+      
+      <!--当事人身份  -->
+      <view class='dsrsf'>
+        <view class='title'>
+          <text class='star'>*</text>
+          <text class='name'>当事人身份证明</text>
+        </view>
+        <view class='info'>
+          <view class='material'  wx:if='{{dsrsf.length}}'>
+            <image></image>
+          </view>
+          <view class='pic'>
+            <image src='../../../image/pic.png'></image>
+          </view>
+        </view>
+      </view>
+
+
+      <!--证据材料  -->
+      <view class='zjcl'>
+        <view class='title'>
+          <text class='star'>*</text>
+          <text class='name'>证据材料</text>
+        </view>
+        <view class='info'>
+          <view class='material' wx:if='{{zjcl.length}}'>
+            <image></image>
+          </view>
+          <view class='pic'>
+            <image src='../../../image/pic.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <!--当事人送达地址确认书  -->
+      <view class='qrs'>
+        <view class='title'>
+          <text class='star'>*</text>
+          <text class='name'>当事人送达确认书</text>
+        </view>
+        <view class='info'>
+          <view class='material' wx:if='{{qrs.length}}'>
+            <image></image>
+          </view>
+          <view class='pic'>
+            <image src='../../../image/pic.png'></image>
+          </view>
+        </view>
+      </view>
+
+      <button class='btn-big' bindtap='inputUserInfo'>下一步</button>
+    </view>
+
+</scroll-view>

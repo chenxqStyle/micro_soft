@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/minecase/mycase/mycase",
+    "pages/minecase/faceInfo/faceInfo",
+    "pages/minecase/mycaseList/mycaseList",
+    "pages/minecase/mycaseListDetails/mycaseListDetails",
+    "pages/zhinengform/brainform/brainform",
+    "pages/zhinengform/brainform_main/brainform_main",
+    "pages/cloudCabinet/smrz/smrz",
+    "pages/cloudCabinet/yyyg/yyyg",
+
+    "pages/zxla/lalx/lalx",
+    "pages/zxla/sccl/sccl",
+    "pages/zxla/ajxx/ajxx"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "XX微法院",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#853226"
+  }
+}

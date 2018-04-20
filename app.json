@@ -1,0 +1,28 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/minecase/mycase/mycase",
+    "pages/minecase/faceInfo/faceInfo",
+    "pages/minecase/mycaseList/mycaseList",
+    "pages/minecase/mycaseListDetails/mycaseListDetails",
+    "pages/zhinengform/brainform_main/brainform_main",
+    "pages/zhinengform/brainform/brainform",
+    "pages/cloudCabinet/smrz/smrz",
+    "pages/cloudCabinet/yyyg/yyyg",
+  
+    "pages/zxla/sccl/sccl",
+    "pages/zxla/ajxx/ajxx",
+    "pages/zxla/lalx/lalx",
+    "pages/zxla/laxq/laxq",
+    "pages/zxla/login/login",
+    "pages/zxla/dsrxx/dsrxx"   
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智能法云",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#853226"
+  }
+}

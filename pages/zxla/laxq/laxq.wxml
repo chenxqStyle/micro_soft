@@ -1,0 +1,109 @@
+<!--pages/zxla/laxq/laxq.wxml-->
+<scroll-view  class='scroll-container' scroll-y='true' scroll-with-animation='true'>
+      <view class='title fts-26 ft-grey'>案件概况</view>
+      <view class='section'>
+        <view class='case-item'>
+          <text space='ensp' class='ft-grey'>案<text class='blank-2'></text>由：</text>
+          <text class='ay'>{{detail.ay}}</text>
+        </view>
+        <view class='case-item'>
+          <text space='ensp' class='ft-grey'>标<text class='blank-2'></text>的：</text>
+          <text class='bd'>{{detail.bd + "  元"}}</text>
+        </view>
+        <view class='case-item'>
+          <text space='ensp' class='ft-grey'>案件状态：</text>
+          <text class='ajzt {{detail.state == 1? "ajzt-wc":"ajzt-sh"}}'>{{detail.state == 1?'已完成':'审核中'}}</text>
+        </view>
+        <view class='case-item'>
+          <text class='ft-grey'>提交日期：</text>
+          <text class='larq'>{{detail.tjsj}}</text>
+        </view>
+      </view>
+
+      <!-- 原告信息  -->
+      <view class='title fts-26 ft-grey'>原告信息</view>
+      <view class='dsr-detail' wx:for="{{dsr}}" wx:key="{{index}}" wx:if="{{item.type==1}}">
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>类<text class='blank-2'></text>型：</text>
+          <text class='txt'>{{item.identity}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>姓<text class='blank-2'></text>名：</text>
+          <text class='txt'>{{item.name}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>民<text class='blank-2'></text>族：</text>
+          <text class='txt'>{{item.mz}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>性<text class='blank-2'></text>别：</text>
+          <text class='txt'>{{item.gender == 0?'男':item.gender == 1?'女':'其他'}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>国<text class='blank-2'></text>籍：</text>
+          <text class='txt'>{{item.nationality}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>身份证号：</text>
+          <text class='txt'>{{item.sfz}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>联系电话：</text>
+          <text class='txt'>{{item.tel}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>地<text class='blank-2'></text>址：</text>
+          <text class='txt'>{{item.address}}</text>
+        </view>
+      </view>
+      <!-- 被告信息  -->
+      <view class='title fts-26 ft-grey'>被告信息</view>
+      <view class='dsr-detail' wx:for="{{dsr}}" wx:key="{{index}}" wx:if="{{item.type==2}}">
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>类<text class='blank-2'></text>型：</text>
+          <text class='txt'>{{item.identity}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>姓<text class='blank-2'></text>名：</text>
+          <text class='txt'>{{item.name}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>民<text class='blank-2'></text>族：</text>
+          <text class='txt'>{{item.mz}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>性<text class='blank-2'></text>别：</text>
+          <text class='txt'>{{item.gender == 0?'男':item.gender == 1?'女':'其他'}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>国<text class='blank-2'></text>籍：</text>
+          <text class='txt'>{{item.nationality}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>身份证号：</text>
+          <text class='txt'>{{item.sfz}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>联系电话：</text>
+          <text class='txt'>{{item.tel}}</text>
+        </view>
+
+        <view class='detail-item'>
+          <text space='ensp' class='ft-grey'>地<text class='blank-2'></text>址：</text>
+          <text class='txt'>{{item.address}}</text>
+        </view>
+      </view>
+   </scroll-view>
